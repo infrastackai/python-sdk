@@ -24,7 +24,7 @@ jobs:
   
     - uses: ncipollo/release-action@v1
       with:
-        name: Python ${{ steps.tag_extractor.outputs.latest_tag }}
+        name: Infrastack ${{ steps.tag_extractor.outputs.latest_tag }}
         generateReleaseNotes: true
         tag: ${{ steps.tag_extractor.outputs.latest_tag }}
 
