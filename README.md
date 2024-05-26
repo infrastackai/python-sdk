@@ -12,6 +12,12 @@ Currently, this SDK supports:
 
 We are actively working on adding support for Django and FastAPI, so stay tuned for more updates!
 
+## Installation
+
+```console
+pip3 install infrastack
+```
+
 
 ## Integrations
 
