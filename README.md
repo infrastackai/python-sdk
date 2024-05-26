@@ -10,7 +10,7 @@ Currently, this SDK supports:
 2. **Logging**: Send logs to InfraStack AI for centralized log management and analysis.
 3. **Tracing**: Create and manage traces to monitor the performance and behavior of your application.
 
-We are actively working on adding support for Django and FastAPI, so stay tuned for more updates!
+We are actively working on adding support for Django FastAPI and LLM's, so stay tuned for more updates!
 
 ## Installation
 
