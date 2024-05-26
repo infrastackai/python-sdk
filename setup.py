@@ -15,7 +15,7 @@ setup(
     author="Infrastack AI",
     author_email="info@infrastack.ai",
     license="MIT",
-    packages=["infrastack"],
+    packages=["infrastack", "infrastack.tracer", "infrastack.logs", "infrastack.flask"],
     install_requires=install_requires,
     python_requires=">= 3",
     zip_safe=False,
