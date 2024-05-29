@@ -31,7 +31,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-FlaskInstrument("your_service_name", app, infrastackai_api_key="your_api_key")
+FlaskInstrument("your_service_name", app, infrastackai_api_key="your_infrastack_api_key")
 
 @app.route('/')
 def hello_world():
@@ -50,7 +50,7 @@ from infrastack import LogHandler
 import logging
 
 logger = logging.getLogger(__name__)
-LogHandler("your_service_name", logger, infrastackai_api_key="your_api_key")
+LogHandler("your_service_name", logger, infrastackai_api_key="your_infrastack_api_key")
 
 logger.info("TEST")
 ```
@@ -62,13 +62,39 @@ To create and use a tracer with InfraStack AI, use the following code snippet:
 ```python
 from infrastack import CreateTracer
 
-my_tracer = CreateTracer("your_service_name", "trace_name", infrastackai_api_key="your_api_key")
+my_tracer = CreateTracer("your_service_name", "trace_name", infrastackai_api_key="your_infrastack_api_key")
 
 with my_tracer.start_span("scope-create-version") as span:
     span.set_attribute("version", "0.0.0")
     span.set_attribute("scope", "create-version")
     span.set_attribute("author", "Your Name")
     print("hi")
+```
+
+
+
+### OpenAI Instrument
+
+To instrument your OpenAI API calls with InfraStack AI, use the following code snippet:
+
+```python
+from infrastack import OpenAIInstrument
+from openai import OpenAI
+
+# Initialize OpenAIInstrument
+instrument = OpenAIInstrument("your_service_name", catch_content=False, infrastackai_api_key="your_infrastack_api_key")
+
+# Example OpenAI API call
+client = OpenAI(api_key="your_openai_api_key")
+
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {"role": "user", "content": [{"type": "text", "text": "Hi"}]}
+    ]
+)
+
+print(response)
 ```
 
 
